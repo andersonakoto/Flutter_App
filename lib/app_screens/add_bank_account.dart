@@ -173,6 +173,7 @@ class _AddBankAccountState extends State<AddBankAccount> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,

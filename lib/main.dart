@@ -13,7 +13,7 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FlyFli',
       theme: ThemeData(fontFamily: 'Gilroy'),
-      initialRoute: Router.addBankAccount,
+      initialRoute: Router.dashboard,
       onGenerateRoute: Router.onGenerateRoute,
       navigatorKey: Router.navigatorKey,
     );

@@ -1,5 +1,6 @@
 import 'package:FyiFli/app_screens/add_bank_account.dart';
 import 'package:FyiFli/app_screens/congratulations.dart';
+import 'package:FyiFli/app_screens/dashboard.dart';
 import 'package:FyiFli/app_screens/launcher.dart';
 import 'package:FyiFli/app_screens/peaceofmind.dart';
 import 'package:FyiFli/app_screens/signup_3.dart';
@@ -17,5 +18,6 @@ class $Router {
   Congratulations congratulations;
   Peaceofmind peaceofmind;
   AddBankAccount addBankAccount;
+  Dashboard dashboard;
 
 }

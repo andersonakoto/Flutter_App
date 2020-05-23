@@ -74,8 +74,6 @@ class _AddBankAccountState extends State<AddBankAccount> {
           textAlign: TextAlign.left,
         ));
 
-
-
     Widget name_field = Container(
       margin: EdgeInsets.only(
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),

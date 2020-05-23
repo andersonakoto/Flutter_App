@@ -14,6 +14,7 @@ import 'package:FyiFli/app_screens/signup_5.dart';
 import 'package:FyiFli/app_screens/congratulations.dart';
 import 'package:FyiFli/app_screens/peaceofmind.dart';
 import 'package:FyiFli/app_screens/add_bank_account.dart';
+import 'package:FyiFli/app_screens/dashboard.dart';
 
 class Router {
   static const launcher = '/launcher';
@@ -23,6 +24,7 @@ class Router {
   static const congratulations = '/congratulations';
   static const peaceofmind = '/peaceofmind';
   static const addBankAccount = '/add-bank-account';
+  static const dashboard = '/dashboard';
   static GlobalKey<NavigatorState> get navigatorKey =>
       getNavigatorKey<Router>();
   static NavigatorState get navigator => navigatorKey.currentState;
@@ -63,6 +65,11 @@ class Router {
       case Router.addBankAccount:
         return MaterialPageRoute(
           builder: (_) => AddBankAccount(),
+          settings: settings,
+        );
+      case Router.dashboard:
+        return MaterialPageRoute(
+          builder: (_) => Dashboard(),
           settings: settings,
         );
       default:

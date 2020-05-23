@@ -169,6 +169,7 @@ class _CongratulationsState extends State<Congratulations> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,

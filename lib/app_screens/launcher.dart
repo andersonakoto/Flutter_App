@@ -24,6 +24,7 @@ class _LauncherState extends State<Launcher> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),

@@ -181,6 +181,7 @@ class _Signup5State extends State<Signup5> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,

@@ -171,7 +171,7 @@ class _Signup4State extends State<Signup4> {
 
 
     final leftSection2 = Container(
-      margin: EdgeInsets.only(left: 40.0, top: 10.0, right: 0.0, bottom: 30.0),
+      margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 0.0, bottom: 30.0),
       alignment: Alignment.bottomLeft,
       child: Text(
         "Already have an account?",
@@ -192,6 +192,7 @@ class _Signup4State extends State<Signup4> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,

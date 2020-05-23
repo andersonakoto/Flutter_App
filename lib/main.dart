@@ -1,4 +1,4 @@
-import 'package:FyiFli/app_screens/signup.dart';
+import 'package:FyiFli/app_screens/signup_3.dart';
 import 'package:flutter/material.dart';
 
 import 'app_screens/launcher.dart';
@@ -12,7 +12,7 @@ class Main extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FlyFli',
-      initialRoute: Router.launcher,
+      initialRoute: Router.addBankAccount,
       onGenerateRoute: Router.onGenerateRoute,
       navigatorKey: Router.navigatorKey,
     );

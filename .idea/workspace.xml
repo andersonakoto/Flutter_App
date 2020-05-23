@@ -12,11 +12,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54322a4c-d7b1-4396-aa1a-88ce719490be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/build/entrypoint/build.dart.snapshot" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/build/entrypoint/build.dart.snapshot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/build_resolvers/sdk.sum" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/build_resolvers/sdk.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/build_resolvers/sdk.sum.deps" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/build_resolvers/sdk.sum.deps" afterDir="false" />
-    </list>
+    <list default="true" id="54322a4c-d7b1-4396-aa1a-88ce719490be" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,12 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="AHK7N17303004662" />
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cDZun5VeUSFHQ2eDVSymc14DI1" />
@@ -100,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590227765875</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fly Fli App UI for Client in Flutter">
+      <created>1590227873090</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590227873090</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -794,6 +794,7 @@ class _Signup3State extends State<Signup3> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,

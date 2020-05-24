@@ -32,6 +32,8 @@ dependencies:
   flutter_signin_button: ^1.0.0
   auto_route: ^0.2.1
   grouped_buttons: ^1.0.4
+  smooth_page_indicator: ^0.1.5
+
 
 
 
@@ -61,6 +63,20 @@ flutter:
      - assets/images/onboarding_3.png
      - assets/images/login_logo.png
      - assets/images/congrats.png
+     - assets/images/symbol.png
+     - assets/images/bell.png
+     - assets/images/fin1.png
+     - assets/images/student_debt.png
+     - assets/images/credit_guide.png
+     - assets/images/insurance.png
+     - assets/images/retire.png
+     - assets/images/coaching.png
+     - assets/images/tax.png
+     - assets/images/blue_rectangle.png
+     - assets/images/yellow_rectangle.png
+     - assets/images/ebook1.png
+     - assets/images/ebook_btn.png
+     - assets/images/facebook.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

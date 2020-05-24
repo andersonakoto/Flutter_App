@@ -931,6 +931,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------------
 auto_route
 auto_route_generator
+smooth_page_indicator
 
 MIT License
 

@@ -179,6 +179,7 @@ class _PeaceofmindState extends State<Peaceofmind> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,

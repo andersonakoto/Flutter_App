@@ -212,6 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        title: 'Fly Fli',
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             resizeToAvoidBottomInset: false, // set it to false

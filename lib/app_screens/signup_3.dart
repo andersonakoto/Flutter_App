@@ -797,29 +797,43 @@ class _Signup3State extends State<Signup3> {
       title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              topPart,
-              rankText,
-              checkTitles,
-              box_invest,
-              box_insurance,
-              box_taxes,
-              box_credit,
-              box_debit,
-              box_cards,
-              box_internet,
-              box_inflation,
-              box_retire,
-              signup_button,
-              Row(
-                children: [leftSection, rightSection],
-              )
-            ],
-          ),
+        body: Container(
+          child: Stack(children: <Widget>[
+            Container(
+              child: SingleChildScrollView(
+                child: Container(
+                    child: Column(
+                      children: <Widget>[
+                        topPart,
+                        rankText,
+                        checkTitles,
+                        box_invest,
+                        box_insurance,
+                        box_taxes,
+                        box_credit,
+                        box_debit,
+                        box_cards,
+                        box_internet,
+                        box_inflation,
+                        box_retire,
+                        signup_button,
+                        Row(
+                          children: [leftSection, rightSection],
+                        )
+                      ],
+                    )),
+              ),
+            ),
+            Container(
+              height: 80,
+              child: Row(
+                children: [topPart],
+              ),
+              decoration: BoxDecoration(color: Colors.white),
+            ),
+          ]),
         ),
       ),
     );

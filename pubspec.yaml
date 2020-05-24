@@ -33,6 +33,9 @@ dependencies:
   auto_route: ^0.2.1
   grouped_buttons: ^1.0.4
   smooth_page_indicator: ^0.1.5
+  percent_indicator: ^2.1.1
+  flutter_awesome_buttons: ^0.1.0
+
 
 
 
@@ -77,6 +80,12 @@ flutter:
      - assets/images/ebook1.png
      - assets/images/ebook_btn.png
      - assets/images/facebook.png
+     - assets/images/credit_card.png
+     - assets/images/sort1.png
+     - assets/images/sort2.png
+     - assets/images/sort3.png
+     - assets/images/grocery.png
+     - assets/images/sandwich.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -168,30 +168,43 @@ class _AddBankAccountState extends State<AddBankAccount> {
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              topPart,
-              set_up_intro,
-              link_your,
-              name_field,
-              account_field,
-              bank_field,
-              bank_location_field,
-              setup_button,
-              Row(
-                children: [leftSection, rightSection],
+        body: Container(
+          child: Stack(children: <Widget>[
+            Container(
+              child: SingleChildScrollView(
+                child: Container(
+                    child: Column(
+                      children: <Widget>[
+                        topPart,
+                        set_up_intro,
+                        link_your,
+                        name_field,
+                        account_field,
+                        bank_field,
+                        bank_location_field,
+                        setup_button,
+                        Row(
+                          children: [leftSection, rightSection],
+                        ),
+                      ],
+                    )),
               ),
-            ],
-          ),
+            ),
+            Container(
+              height: 80,
+              child: Row(
+                children: [topPart],
+              ),
+              decoration: BoxDecoration(color: Colors.white),
+            ),
+          ]),
         ),
       ),
     );

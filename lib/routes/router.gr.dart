@@ -12,9 +12,20 @@ import 'package:FyiFli/app_screens/signup_3.dart';
 import 'package:FyiFli/app_screens/signup_4.dart';
 import 'package:FyiFli/app_screens/signup_5.dart';
 import 'package:FyiFli/app_screens/congratulations.dart';
-import 'package:FyiFli/app_screens/peaceofmind.dart';
+import 'package:FyiFli/app_screens/peaceofmind_launch.dart';
 import 'package:FyiFli/app_screens/add_bank_account.dart';
 import 'package:FyiFli/app_screens/dashboard.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/live_budgeting.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/add_edit_category.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/add_edit_items.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/add_edit_goal.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/add_edit_wish.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/add_edit_peace_of_mind.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/add_edit_loan.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/gather_ups.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/peaceofmind_main.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/debt_eliminator.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/financial_dictionary.dart';
 
 class Router {
   static const launcher = '/launcher';
@@ -22,9 +33,20 @@ class Router {
   static const signup_4 = '/signup_4';
   static const signup_5 = '/signup_5';
   static const congratulations = '/congratulations';
-  static const peaceofmind = '/peaceofmind';
+  static const peaceofmind_launch = '/peaceofmind_launch';
   static const addBankAccount = '/add-bank-account';
   static const dashboard = '/dashboard';
+  static const liveBudgeting = '/live-budgeting';
+  static const addEditCategory = '/add-edit-category';
+  static const addEditItems = '/add-edit-items';
+  static const addEditGoal = '/add-edit-goal';
+  static const addEditWish = '/add-edit-wish';
+  static const addEditPeaceOfMind = '/add-edit-peace-of-mind';
+  static const addEditLoan = '/add-edit-loan';
+  static const gatherUps = '/gather-ups';
+  static const peaceofMind_Main = '/peaceof-mind_-main';
+  static const debtEliminator = '/debt-eliminator';
+  static const dictionary = '/dictionary';
   static GlobalKey<NavigatorState> get navigatorKey =>
       getNavigatorKey<Router>();
   static NavigatorState get navigator => navigatorKey.currentState;
@@ -57,9 +79,9 @@ class Router {
           builder: (_) => Congratulations(),
           settings: settings,
         );
-      case Router.peaceofmind:
+      case Router.peaceofmind_launch:
         return MaterialPageRoute(
-          builder: (_) => Peaceofmind(),
+          builder: (_) => Peaceofmind_Launch(),
           settings: settings,
         );
       case Router.addBankAccount:
@@ -70,6 +92,61 @@ class Router {
       case Router.dashboard:
         return MaterialPageRoute(
           builder: (_) => Dashboard(),
+          settings: settings,
+        );
+      case Router.liveBudgeting:
+        return MaterialPageRoute(
+          builder: (_) => LiveBudgeting(),
+          settings: settings,
+        );
+      case Router.addEditCategory:
+        return MaterialPageRoute(
+          builder: (_) => AddEditCategory(),
+          settings: settings,
+        );
+      case Router.addEditItems:
+        return MaterialPageRoute(
+          builder: (_) => AddEditItems(),
+          settings: settings,
+        );
+      case Router.addEditGoal:
+        return MaterialPageRoute(
+          builder: (_) => AddEditGoal(),
+          settings: settings,
+        );
+      case Router.addEditWish:
+        return MaterialPageRoute(
+          builder: (_) => AddEditWish(),
+          settings: settings,
+        );
+      case Router.addEditPeaceOfMind:
+        return MaterialPageRoute(
+          builder: (_) => AddEditPeaceOfMind(),
+          settings: settings,
+        );
+      case Router.addEditLoan:
+        return MaterialPageRoute(
+          builder: (_) => AddEditLoan(),
+          settings: settings,
+        );
+      case Router.gatherUps:
+        return MaterialPageRoute(
+          builder: (_) => GatherUps(),
+          settings: settings,
+        );
+      case Router.peaceofMind_Main:
+        return MaterialPageRoute(
+          builder: (_) => PeaceofMind_Main(),
+          settings: settings,
+        );
+      case Router.debtEliminator:
+        return MaterialPageRoute(
+          builder: (_) => DebtEliminator(),
+          settings: settings,
+        );
+      case Router.dictionary:
+        return MaterialPageRoute(
+          builder: (_) => Dictionary(),
           settings: settings,
         );
       default:

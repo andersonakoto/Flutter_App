@@ -172,7 +172,7 @@ class _CongratulationsState extends State<Congratulations> {
       title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
@@ -194,5 +194,7 @@ class _CongratulationsState extends State<Congratulations> {
         ),
       ),
     );
+
+
   }
 }

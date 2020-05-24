@@ -184,27 +184,41 @@ class _Signup5State extends State<Signup5> {
       title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              topPart,
-              intro,
-              card_number_field,
-              card_name_field,
-              Row(
-                children: [expiry_field, cc_field],
+        body: Container(
+          child: Stack(children: <Widget>[
+            Container(
+              child: SingleChildScrollView(
+                child: Container(
+                    child: Column(
+                      children: <Widget>[
+                        topPart,
+                        intro,
+                        card_number_field,
+                        card_name_field,
+                        Row(
+                          children: [expiry_field, cc_field],
+                        ),
+                        card_setup_button,
+                        Row(
+                          children: [leftSection, rightSection],
+                        ),
+                        Row(
+                          children: [leftSection2, rightSection2],
+                        )
+                      ],
+                    )),
               ),
-              card_setup_button,
-              Row(
-                children: [leftSection, rightSection],
+            ),
+            Container(
+              height: 80,
+              child: Row(
+                children: [topPart],
               ),
-              Row(
-                children: [leftSection2, rightSection2],
-              )
-            ],
-          ),
+              decoration: BoxDecoration(color: Colors.white),
+            ),
+          ]),
         ),
       ),
     );

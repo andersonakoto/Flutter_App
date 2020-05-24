@@ -195,29 +195,44 @@ class _Signup4State extends State<Signup4> {
       title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              topPart,
-              intro,
-              name_field,
-              email_field,
-              user_field,
-              password_field,
-              phone_field,
-              signup_button,
-              Row(
-                children: [leftSection, rightSection],
+        body: Container(
+          child: Stack(children: <Widget>[
+            Container(
+              child: SingleChildScrollView(
+                child: Container(
+                    child: Column(
+                      children: <Widget>[
+                        topPart,
+                        intro,
+                        name_field,
+                        email_field,
+                        user_field,
+                        password_field,
+                        phone_field,
+                        signup_button,
+                        Row(
+                          children: [leftSection, rightSection],
+                        ),
+                        Row(
+                          children: [leftSection2, rightSection2],
+                        )
+                      ],
+                    )),
               ),
-              Row(
-                children: [leftSection2, rightSection2],
-              )
-            ],
-          ),
+            ),
+            Container(
+              height: 80,
+              child: Row(
+                children: [topPart],
+              ),
+              decoration: BoxDecoration(color: Colors.white),
+            ),
+          ]),
         ),
       ),
     );
+
   }
 }

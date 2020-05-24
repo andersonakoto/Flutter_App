@@ -215,7 +215,7 @@ class _LoginScreenState extends State<LoginScreen> {
         title: 'Fly Fli',
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-            resizeToAvoidBottomInset: false, // set it to false
+            resizeToAvoidBottomInset: true, // set it to false
             backgroundColor: Colors.white,
             body: SingleChildScrollView(
                 child: GestureDetector(

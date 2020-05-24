@@ -11,9 +11,9 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'FlyFli',
+      title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
-      initialRoute: Router.dashboard,
+      initialRoute: Router.dictionary,
       onGenerateRoute: Router.onGenerateRoute,
       navigatorKey: Router.navigatorKey,
     );

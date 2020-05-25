@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/router_utils.dart';
 import 'package:FyiFli/app_screens/launcher.dart';
+import 'package:FyiFli/app_screens/signup_2.dart';
 import 'package:FyiFli/app_screens/signup_3.dart';
 import 'package:FyiFli/app_screens/signup_4.dart';
 import 'package:FyiFli/app_screens/signup_5.dart';
@@ -26,9 +27,12 @@ import 'package:FyiFli/app_screens/dasboard_screens/gather_ups.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/peaceofmind_main.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/debt_eliminator.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/financial_dictionary.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/reports.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/saving_tools.dart';
 
 class Router {
   static const launcher = '/launcher';
+  static const signup_2 = '/signup_2';
   static const signup_3 = '/signup_3';
   static const signup_4 = '/signup_4';
   static const signup_5 = '/signup_5';
@@ -47,6 +51,8 @@ class Router {
   static const peaceofMind_Main = '/peaceof-mind_-main';
   static const debtEliminator = '/debt-eliminator';
   static const dictionary = '/dictionary';
+  static const reports = '/reports';
+  static const savingTools = '/saving-tools';
   static GlobalKey<NavigatorState> get navigatorKey =>
       getNavigatorKey<Router>();
   static NavigatorState get navigator => navigatorKey.currentState;
@@ -57,6 +63,11 @@ class Router {
       case Router.launcher:
         return MaterialPageRoute(
           builder: (_) => Launcher(),
+          settings: settings,
+        );
+      case Router.signup_2:
+        return MaterialPageRoute(
+          builder: (_) => Signup2(),
           settings: settings,
         );
       case Router.signup_3:
@@ -147,6 +158,16 @@ class Router {
       case Router.dictionary:
         return MaterialPageRoute(
           builder: (_) => Dictionary(),
+          settings: settings,
+        );
+      case Router.reports:
+        return MaterialPageRoute(
+          builder: (_) => Reports(),
+          settings: settings,
+        );
+      case Router.savingTools:
+        return MaterialPageRoute(
+          builder: (_) => SavingTools(),
           settings: settings,
         );
       default:

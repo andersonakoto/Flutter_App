@@ -10,6 +10,8 @@ import 'package:FyiFli/main.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../custom_tile.dart';
+
 class Dictionary extends StatefulWidget {
   @override
   _DictionaryState createState() => _DictionaryState();
@@ -173,7 +175,10 @@ class AssetState extends State<Asset> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+      color: Colors.transparent, shadowColor: Colors.transparent,
+        child:
+    CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -232,7 +237,9 @@ class GrossState extends State<Gross> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -291,7 +298,9 @@ class AmorState extends State<Amor> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -350,7 +359,9 @@ class BondsState extends State<Bonds> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -408,7 +419,9 @@ class CapitalState extends State<Capital> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -468,7 +481,9 @@ class InterestState extends State<Interest> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -527,7 +542,9 @@ class DependentState extends State<Dependent> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -587,7 +604,9 @@ class EscrowState extends State<Escrow> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;
@@ -646,7 +665,9 @@ class CompensationState extends State<Compensation> {
   }
 
   Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
+    return Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
           this.isExpanded = !isExpanded;

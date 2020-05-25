@@ -35,6 +35,9 @@ dependencies:
   smooth_page_indicator: ^0.1.5
   percent_indicator: ^2.1.1
   flutter_awesome_buttons: ^0.1.0
+  charts_flutter: ^0.9.0
+  extended_tabs: ^0.2.3
+  groovin_widgets: ^1.5.0+2
 
 
 

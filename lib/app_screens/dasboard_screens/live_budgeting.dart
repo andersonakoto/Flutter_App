@@ -345,11 +345,7 @@ class _LiveBudgetingState extends State<LiveBudgeting> {
           Row(
             children: [monthly_savings, spendable],
           ),
-          Row(children: [
-            tx_title,
-            Expanded(child: gather_line),
-            sort1, sort2, sort3,
-          ]),
+          Row(children: [tx_title, Expanded(child: gather_line), sort1, sort2, sort3,]),
           Container(
             margin: EdgeInsets.only(left: 10.0, top: 40.0, right: 10.0, bottom: 50.0),
               child: Column(

@@ -13,7 +13,7 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Fly Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
-      initialRoute: Router.dictionary,
+      initialRoute: Router.signup_2,
       onGenerateRoute: Router.onGenerateRoute,
       navigatorKey: Router.navigatorKey,
     );

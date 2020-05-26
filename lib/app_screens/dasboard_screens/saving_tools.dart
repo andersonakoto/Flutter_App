@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:extended_tabs/extended_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
         EdgeInsets.only(left: 20.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color:Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
           onPressed: () {},
@@ -60,10 +61,10 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
         EdgeInsets.only(left: 10.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+         onPressed: () => Router.navigator.pushNamed(Router.gatherUps),
           child: Text(
             "Gather Ups",
             style: TextStyle(fontSize: 15.0),
@@ -75,10 +76,10 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
         EdgeInsets.only(left: 5.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.peaceofMind_Main),
           child: Text(
             "Peace Of Mind",
             style: TextStyle(fontSize: 15.0),
@@ -89,8 +90,8 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
     Widget progressbar = LinearPercentIndicator(
       lineHeight: 10,
       percent: _progressValue,
-      backgroundColor: Colors.blue[700],
-      progressColor: Colors.yellow[700],
+      backgroundColor: Color(0xFF00249C),
+      progressColor: Color(0xFFDAAA00),
     );
     Widget topPart = Container(
         margin: EdgeInsets.only(left: 0.0, top: 40.0, right: 0.0, bottom: 0.0),
@@ -102,8 +103,8 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+               onPressed: () => Router.navigator.pushNamed(Router.dashboard),
               ),
             ),
             Container(
@@ -150,7 +151,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -281,7 +282,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
                     '\$50',
                     style: TextStyle(
                         fontSize: 24,
-                        color: Colors.yellow[700],
+                        color: Color(0xFFDAAA00),
                         fontWeight: FontWeight.w900),
                     textAlign: TextAlign.left,
                   ),
@@ -307,7 +308,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
       alignment: Alignment.bottomCenter,
       width: 110,
       child: RoundedButtonWithIcon(
-        onPressed: (){},
+       onPressed: () => Router.navigator.pushNamed(Router.addEditGoal),
         icon:Icons.add,
         title: "Add Goal",
         buttonColor: Colors.grey[700], splashColor: Colors.grey,
@@ -345,7 +346,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -476,7 +477,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
                     '\$50',
                     style: TextStyle(
                         fontSize: 24,
-                        color: Colors.yellow[700],
+                        color: Color(0xFFDAAA00),
                         fontWeight: FontWeight.w900),
                     textAlign: TextAlign.left,
                   ),
@@ -502,7 +503,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
       alignment: Alignment.bottomCenter,
       width: 110,
       child: RoundedButtonWithIcon(
-        onPressed: (){},
+        onPressed: () => Router.navigator.pushNamed(Router.addEditWish),
         icon:Icons.add,
         title: "Add Wish",
         buttonColor: Colors.grey[700], splashColor: Colors.grey,
@@ -521,7 +522,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
               unselectedLabelColor: Colors.grey[700],
               unselectedLabelStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
               labelStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
-              labelColor: Colors.blue[700],
+              labelColor: Color(0xFF00249C),
               tabs: <Widget>[
                 Tab(
                   text: 'Financial Goals',
@@ -562,7 +563,7 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,

@@ -16,6 +16,17 @@ import 'package:FyiFli/app_screens/congratulations.dart';
 import 'package:FyiFli/app_screens/peaceofmind_launch.dart';
 import 'package:FyiFli/app_screens/add_bank_account.dart';
 import 'package:FyiFli/app_screens/dashboard.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/profile.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/edit_profile.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/connection_list.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/connection_requests.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/connected_profile.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/not_connected_profile.dart';
+import 'package:FyiFli/app_screens/modals/high_school_students.dart';
+import 'package:FyiFli/app_screens/modals/college_students.dart';
+import 'package:FyiFli/app_screens/modals/graduates.dart';
+import 'package:FyiFli/app_screens/modals/open_savings.dart';
+import 'package:FyiFli/app_screens/dasboard_screens/people_you_may_know.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/live_budgeting.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/add_edit_category.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/add_edit_items.dart';
@@ -32,6 +43,7 @@ import 'package:FyiFli/app_screens/dasboard_screens/saving_tools.dart';
 
 class Router {
   static const launcher = '/launcher';
+  static const loginScreen = '/login-screen';
   static const signup_2 = '/signup_2';
   static const signup_3 = '/signup_3';
   static const signup_4 = '/signup_4';
@@ -40,6 +52,17 @@ class Router {
   static const peaceofmind_launch = '/peaceofmind_launch';
   static const addBankAccount = '/add-bank-account';
   static const dashboard = '/dashboard';
+  static const profile = '/profile';
+  static const editProfile = '/edit-profile';
+  static const connectionList = '/connection-list';
+  static const connectionRequests = '/connection-requests';
+  static const connectedProfile = '/connected-profile';
+  static const notConnectedProfile = '/not-connected-profile';
+  static const highSchool = '/high-school';
+  static const collegeStudents = '/college-students';
+  static const graduates = '/graduates';
+  static const openSavings = '/open-savings';
+  static const peopleYouMayKnow = '/people-you-may-know';
   static const liveBudgeting = '/live-budgeting';
   static const addEditCategory = '/add-edit-category';
   static const addEditItems = '/add-edit-items';
@@ -63,6 +86,11 @@ class Router {
       case Router.launcher:
         return MaterialPageRoute(
           builder: (_) => Launcher(),
+          settings: settings,
+        );
+      case Router.loginScreen:
+        return MaterialPageRoute(
+          builder: (_) => LoginScreen(),
           settings: settings,
         );
       case Router.signup_2:
@@ -103,6 +131,61 @@ class Router {
       case Router.dashboard:
         return MaterialPageRoute(
           builder: (_) => Dashboard(),
+          settings: settings,
+        );
+      case Router.profile:
+        return MaterialPageRoute(
+          builder: (_) => Profile(),
+          settings: settings,
+        );
+      case Router.editProfile:
+        return MaterialPageRoute(
+          builder: (_) => EditProfile(),
+          settings: settings,
+        );
+      case Router.connectionList:
+        return MaterialPageRoute(
+          builder: (_) => ConnectionList(),
+          settings: settings,
+        );
+      case Router.connectionRequests:
+        return MaterialPageRoute(
+          builder: (_) => ConnectionRequests(),
+          settings: settings,
+        );
+      case Router.connectedProfile:
+        return MaterialPageRoute(
+          builder: (_) => ConnectedProfile(),
+          settings: settings,
+        );
+      case Router.notConnectedProfile:
+        return MaterialPageRoute(
+          builder: (_) => NotConnectedProfile(),
+          settings: settings,
+        );
+      case Router.highSchool:
+        return MaterialPageRoute(
+          builder: (_) => HighSchool(),
+          settings: settings,
+        );
+      case Router.collegeStudents:
+        return MaterialPageRoute(
+          builder: (_) => CollegeStudents(),
+          settings: settings,
+        );
+      case Router.graduates:
+        return MaterialPageRoute(
+          builder: (_) => Graduates(),
+          settings: settings,
+        );
+      case Router.openSavings:
+        return MaterialPageRoute(
+          builder: (_) => OpenSavings(),
+          settings: settings,
+        );
+      case Router.peopleYouMayKnow:
+        return MaterialPageRoute(
+          builder: (_) => PeopleYouMayKnow(),
           settings: settings,
         );
       case Router.liveBudgeting:

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,9 @@ import 'package:flutter/services.dart';
 import 'package:FyiFli/main.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
+import '../custom_tile.dart';
+
 
 
 class SimpleLineChart extends StatelessWidget {
@@ -70,6 +74,18 @@ class Reports extends StatefulWidget {
 
 
 class _ReportsState extends State<Reports> {
+
+  bool isExpanded1, isExpanded2;
+
+  @override
+  void initState() {
+    this.isExpanded1 = false;
+    this.isExpanded2 = false;
+
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -77,6 +93,199 @@ class _ReportsState extends State<Reports> {
       statusBarBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.dark,
     ));
+
+    Widget goal_container = Container(
+        margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
+
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 1.0, // soften the shadow
+            spreadRadius: 0.2, //extend the shadow
+          )
+        ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
+        child: Column(
+          children: [
+            Container(
+                margin: EdgeInsets.only(left: 20.0, top: 20.0, right: 0.0, bottom: 30.0),
+                child: Row(
+                    children: [
+                      Text(
+                        'Target - \$2000      ',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.grey[700],
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Text(
+                        'Acquired - \$2000 ',
+                        style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900,
+                          color: Color(0xFF00249C),
+                        ),
+                        textAlign: TextAlign.left,
+                      ),])
+            ),
+            CircularPercentIndicator(
+              radius: 140.0,
+              lineWidth: 15.0,
+              animation: true,
+              percent: 0.6,
+              center: Text("100%", style: TextStyle(color: Color(0xFF00249C), fontWeight: FontWeight.bold, fontSize: 20.0)),
+              circularStrokeCap: CircularStrokeCap.round,
+              progressColor: Color(0xFF00249C),
+            ),
+            Text(
+              'Excellent',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.green[700],
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ],
+        )
+    );
+    Widget goal_head = Container(
+        margin: EdgeInsets.only(left: 20.0, top: 0.0, right: 10.0, bottom: 0.0),
+
+        child: Row (
+          children: [
+            Text(
+              'Goal Name',
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey[700],
+                  fontWeight: FontWeight.w900
+              ),
+              textAlign: TextAlign.left,
+            ),
+
+          ],
+        )
+    );
+    Widget goal_expand = Container(
+      margin: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+      height: 280,
+      child: goal_container,
+    );
+    Widget goal = Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
+          expansionCallback: (int index, bool isExpanded) {
+            setState(() {
+              this.isExpanded1 = !isExpanded;
+            });
+          },
+          children: <ExpansionPanel>[
+            new ExpansionPanel(
+              headerBuilder: (BuildContext context, bool isExpanded)
+              => goal_head, body: goal_expand,
+              isExpanded: this.isExpanded1,
+            ),
+          ],
+        )
+    );
+
+
+    Widget loan_container = Container(
+        margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
+
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 1.0, // soften the shadow
+            spreadRadius: 0.2, //extend the shadow
+          )
+        ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
+        child: Column(
+          children: [
+            Container(
+                margin: EdgeInsets.only(left: 20.0, top: 20.0, right: 0.0, bottom: 30.0),
+                child: Row(
+                    children: [
+                      Text(
+                        'Target - \$2000      ',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.grey[700],
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Text(
+                        'Cleared - \$2000 ',
+                        style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900,
+                          color: Color(0xFF00249C),
+                        ),
+                        textAlign: TextAlign.left,
+                      ),])
+            ),
+            CircularPercentIndicator(
+              radius: 140.0,
+              lineWidth: 15.0,
+              animation: true,
+              percent: 0.6,
+              center: Text("100%", style: TextStyle(color:Color(0xFF00249C), fontWeight: FontWeight.bold, fontSize: 20.0)),
+              circularStrokeCap: CircularStrokeCap.round,
+              progressColor: Color(0xFF00249C),
+            ),
+            Text(
+              'Excellent',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.green[700],
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ],
+        )
+    );
+    Widget loan_head = Container(
+        margin: EdgeInsets.only(left: 20.0, top: 0.0, right: 10.0, bottom: 0.0),
+
+        child: Row (
+          children: [
+            Text(
+              'Loan Name',
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey[700],
+                  fontWeight: FontWeight.w900
+              ),
+              textAlign: TextAlign.left,
+            ),
+
+          ],
+        )
+    );
+    Widget loan_expand = Container(
+      margin: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+      height: 280,
+      child: loan_container,
+    );
+    Widget loan = Card(
+        color: Colors.transparent, shadowColor: Colors.transparent,
+        child: CustomExpansionPanelList(
+          expansionCallback: (int index, bool isExpanded) {
+            setState(() {
+              this.isExpanded2 = !isExpanded;
+            });
+          },
+          children: <ExpansionPanel>[
+            new ExpansionPanel(
+              headerBuilder: (BuildContext context, bool isExpanded)
+              => loan_head, body: loan_expand,
+              isExpanded: this.isExpanded2,
+            ),
+          ],
+        )
+    );
+
+
+
+
 
     Widget reportTitle = Container(
         margin: EdgeInsets.only(left: 0.0, top: 40.0, right: 0.0, bottom: 0.0),
@@ -88,8 +297,8 @@ class _ReportsState extends State<Reports> {
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: ()=> Router.navigator.pushNamed(Router.dashboard),
               ),
             ),
             Container(
@@ -113,7 +322,7 @@ class _ReportsState extends State<Reports> {
         EdgeInsets.only(left: 40.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
           onPressed: () {},
@@ -128,7 +337,7 @@ class _ReportsState extends State<Reports> {
         EdgeInsets.only(left: 10.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
           onPressed: () {},
@@ -143,7 +352,7 @@ class _ReportsState extends State<Reports> {
         EdgeInsets.only(left: 5.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color:Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
           onPressed: () {},
@@ -171,7 +380,7 @@ class _ReportsState extends State<Reports> {
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -193,7 +402,7 @@ class _ReportsState extends State<Reports> {
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -216,7 +425,7 @@ class _ReportsState extends State<Reports> {
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -247,7 +456,7 @@ class _ReportsState extends State<Reports> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -272,14 +481,14 @@ class _ReportsState extends State<Reports> {
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 0.0),
-                          child: Goal(),
+                          child: goal,
                         ),
                         Row(
                             children: [debt_eliminator, Expanded(child: debt_line)]
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 20.0, top: 0.0, right: 20.0, bottom: 40.0),
-                          child: Loan(),
+                          child: loan,
                         ),
                       ],
                     )),
@@ -328,7 +537,7 @@ Widget goal_container = Container(
                     'Acquired - \$2000 ',
                     style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.w900,
-                      color: Colors.blue[700],
+                      color: Color(0xFF00249C),
                     ),
                     textAlign: TextAlign.left,
                   ),])
@@ -338,9 +547,9 @@ Widget goal_container = Container(
           lineWidth: 15.0,
           animation: true,
           percent: 0.6,
-          center: Text("100%", style: TextStyle(color: Colors.blue[700], fontWeight: FontWeight.bold, fontSize: 20.0)),
+          center: Text("100%", style: TextStyle(color: Color(0xFF00249C), fontWeight: FontWeight.bold, fontSize: 20.0)),
           circularStrokeCap: CircularStrokeCap.round,
-          progressColor: Colors.blue[700],
+          progressColor: Color(0xFF00249C),
         ),
         Text(
           'Excellent',
@@ -353,176 +562,3 @@ Widget goal_container = Container(
       ],
     )
 );
-
-Widget goal_head = Container(
-    margin: EdgeInsets.only(left: 20.0, top: 0.0, right: 10.0, bottom: 0.0),
-
-    child: Row (
-      children: [
-        Text(
-          'Goal Name',
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey[700],
-              fontWeight: FontWeight.w900
-          ),
-          textAlign: TextAlign.left,
-        ),
-
-      ],
-    )
-);
-
-Widget goal_expand = Container(
-  margin: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
-  height: 280,
-  child: goal_container,
-);
-
-
-
-class Goal extends StatefulWidget {
-  GoalState createState() => new GoalState();
-}
-
-class GoalState extends State<Goal> {
-  bool isExpanded;
-
-  @override
-  void initState() {
-    this.isExpanded = false;
-    super.initState();
-  }
-
-  Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
-      expansionCallback: (int index, bool isExpanded) {
-        setState(() {
-          this.isExpanded = !isExpanded;
-        });
-      },
-      children: <ExpansionPanel>[
-        new ExpansionPanel(
-          headerBuilder: (BuildContext context, bool isExpanded)
-          => goal_head, body: goal_expand,
-          isExpanded: this.isExpanded,
-        ),
-      ],
-    )
-    );
-  }
-}
-
-Widget loan_container = Container(
-    margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
-
-    decoration: BoxDecoration(boxShadow: [
-      BoxShadow(
-        color: Colors.grey,
-        blurRadius: 1.0, // soften the shadow
-        spreadRadius: 0.2, //extend the shadow
-      )
-    ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
-    child: Column(
-      children: [
-        Container(
-            margin: EdgeInsets.only(left: 20.0, top: 20.0, right: 0.0, bottom: 30.0),
-            child: Row(
-                children: [
-                  Text(
-                    'Target - \$2000      ',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.grey[700],
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    'Cleared - \$2000 ',
-                    style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w900,
-                      color: Colors.blue[700],
-                    ),
-                    textAlign: TextAlign.left,
-                  ),])
-        ),
-        CircularPercentIndicator(
-          radius: 140.0,
-          lineWidth: 15.0,
-          animation: true,
-          percent: 0.6,
-          center: Text("100%", style: TextStyle(color: Colors.blue[700], fontWeight: FontWeight.bold, fontSize: 20.0)),
-          circularStrokeCap: CircularStrokeCap.round,
-          progressColor: Colors.blue[700],
-        ),
-        Text(
-          'Excellent',
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.green[700],
-          ),
-          textAlign: TextAlign.left,
-        ),
-      ],
-    )
-);
-
-Widget loan_head = Container(
-    margin: EdgeInsets.only(left: 20.0, top: 0.0, right: 10.0, bottom: 0.0),
-
-    child: Row (
-      children: [
-        Text(
-          'Loan Name',
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey[700],
-              fontWeight: FontWeight.w900
-          ),
-          textAlign: TextAlign.left,
-        ),
-
-      ],
-    )
-);
-
-Widget loan_expand = Container(
-  margin: EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
-  height: 280,
-  child: loan_container,
-);
-
-
-
-class Loan extends StatefulWidget {
-  LoanState createState() => new LoanState();
-}
-
-class LoanState extends State<Loan> {
-  bool isExpanded;
-
-  @override
-  void initState() {
-    this.isExpanded = false;
-    super.initState();
-  }
-
-  Widget build(BuildContext context) {
-    return Card(child: ExpansionPanelList(
-      expansionCallback: (int index, bool isExpanded) {
-        setState(() {
-          this.isExpanded = !isExpanded;
-        });
-      },
-      children: <ExpansionPanel>[
-        new ExpansionPanel(
-          headerBuilder: (BuildContext context, bool isExpanded)
-          => loan_head, body: loan_expand,
-          isExpanded: this.isExpanded,
-        ),
-      ],
-    )
-    );
-  }
-}
-

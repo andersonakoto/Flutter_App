@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -31,8 +32,8 @@ class _AddEditPeaceOfMindState extends State<AddEditPeaceOfMind> {
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: () => Router.navigator.pushNamed(Router.peaceofMind_Main),
               ),
             ),
             Container(
@@ -57,12 +58,12 @@ class _AddEditPeaceOfMindState extends State<AddEditPeaceOfMind> {
           left: 30.0, top: 20.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Piece Of Mind Amount',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -88,7 +89,7 @@ class _AddEditPeaceOfMindState extends State<AddEditPeaceOfMind> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,

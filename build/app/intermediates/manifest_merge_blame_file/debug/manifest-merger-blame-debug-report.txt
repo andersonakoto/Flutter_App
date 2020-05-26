@@ -30,7 +30,7 @@
 25        android:debuggable="true"
 26        android:icon="@mipmap/ic_launcher"
 26-->C:\Users\Andy\Desktop\SCI\PROJECTS\APP PROJECTS\fyi_fli\android\app\src\main\AndroidManifest.xml:11:9-43
-27        android:label="Fly Fli" >
+27        android:label="Fyi Fli" >
 27-->C:\Users\Andy\Desktop\SCI\PROJECTS\APP PROJECTS\fyi_fli\android\app\src\main\AndroidManifest.xml:10:9-32
 28        <activity
 28-->C:\Users\Andy\Desktop\SCI\PROJECTS\APP PROJECTS\fyi_fli\android\app\src\main\AndroidManifest.xml:12:9-40:20

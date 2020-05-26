@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -29,8 +30,8 @@ class _DebtEliminatorState extends State<DebtEliminator> {
     Widget progressbar = LinearPercentIndicator(
       lineHeight: 10,
       percent: _progressValue,
-      backgroundColor: Colors.blue[700],
-      progressColor: Colors.yellow[700],
+      backgroundColor: Color(0xFF00249C),
+      progressColor: Color(0xFFDAAA00),
     );
     Widget topPart = Container(
         margin: EdgeInsets.only(left: 0.0, top: 40.0, right: 0.0, bottom: 0.0),
@@ -42,8 +43,8 @@ class _DebtEliminatorState extends State<DebtEliminator> {
                   EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: () => Router.navigator.pushNamed(Router.dashboard),
               ),
             ),
             Container(
@@ -187,7 +188,7 @@ class _DebtEliminatorState extends State<DebtEliminator> {
                     '\$50',
                     style: TextStyle(
                         fontSize: 24,
-                        color: Colors.yellow[700],
+                        color: Color(0xFFDAAA00),
                         fontWeight: FontWeight.w900),
                     textAlign: TextAlign.left,
                   ),
@@ -213,7 +214,7 @@ class _DebtEliminatorState extends State<DebtEliminator> {
      alignment: Alignment.bottomCenter,
      width: 110,
      child: RoundedButtonWithIcon(
-        onPressed: (){},
+        onPressed: ()=> Router.navigator.pushNamed(Router.addEditLoan),
         icon:Icons.add,
         title: "Add Loan",
         buttonColor: Colors.grey[700], splashColor: Colors.grey,
@@ -222,7 +223,7 @@ class _DebtEliminatorState extends State<DebtEliminator> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -31,7 +32,7 @@ class _CongratulationsState extends State<Congratulations> {
                 'Congratulations',
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.blue,
+                    color: Color(0xFF00249C),
                     fontWeight: FontWeight.w700),
                 textAlign: TextAlign.center,
               ),
@@ -69,7 +70,7 @@ class _CongratulationsState extends State<Congratulations> {
           "Your Current Balance is ",
           style: TextStyle(
               fontSize: 20,
-              color: Colors.blue,
+              color: Color(0xFF00249C),
               fontWeight: FontWeight.w700),
           textAlign: TextAlign.center,
         )
@@ -82,7 +83,7 @@ class _CongratulationsState extends State<Congratulations> {
           "\$5,000",
           style: TextStyle(
               fontSize: 38,
-              color: Colors.blue,
+              color: Color(0xFF00249C),
               fontWeight: FontWeight.w700),
           textAlign: TextAlign.center,
         )
@@ -109,7 +110,7 @@ class _CongratulationsState extends State<Congratulations> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: ()=> Router.navigator.pushNamed(Router.signup_5),
           child: Text(
             "Start Adding Expenses",
             style: TextStyle(fontSize: 20.0),
@@ -128,7 +129,7 @@ class _CongratulationsState extends State<Congratulations> {
             margin: EdgeInsets.only(left: 15.0),
             child: FlatButton(
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: ()=> Router.navigator.pushNamed(Router.peaceofmind_launch),
               child: Text(
                 "Set up a Peace Of Mind Fund",
                 style: TextStyle(fontSize: 15.0),
@@ -161,15 +162,15 @@ class _CongratulationsState extends State<Congratulations> {
         margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 30.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: ()=> Router.navigator.pushNamed(Router.dashboard),
           child: Text("Go to Dashboard",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -194,7 +195,7 @@ class _CongratulationsState extends State<Congratulations> {
         ),
       ),
     );
-
-
   }
+
+
 }

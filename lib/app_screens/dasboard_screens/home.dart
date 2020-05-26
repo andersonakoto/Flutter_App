@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:FyiFli/app_screens/dasboard_screens/ebooknav.dart';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -18,7 +19,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.blue[900],
+      statusBarColor:Color(0xFF00249C),
       statusBarBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.dark,
     ));
@@ -143,7 +144,7 @@ class _HomeState extends State<Home> {
       child: Divider(
         indent: 5,
         endIndent: 20,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -341,7 +342,7 @@ class _HomeState extends State<Home> {
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -350,8 +351,8 @@ class _HomeState extends State<Home> {
         margin: EdgeInsets.only(left: 0.0, top: 40.0, right: 10.0, bottom: 0.0),
         alignment: Alignment.centerRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+         onPressed: () => Router.navigator.pushNamed(Router.liveBudgeting),
           child: Text("View Details", style: TextStyle(fontSize: 15.0)),
         ));
 
@@ -386,7 +387,7 @@ class _HomeState extends State<Home> {
           'Spendable Income',
           style: TextStyle(
             fontSize: 15,
-            color: Colors.yellow[700],
+            color: Color(0xFFDAAA00),
           ),
           textAlign: TextAlign.left,
         ));
@@ -580,7 +581,7 @@ class _HomeState extends State<Home> {
       child: Divider(
         indent: 5,
         endIndent: 5,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -589,8 +590,8 @@ class _HomeState extends State<Home> {
         margin: EdgeInsets.only(left: 0.0, top: 10.0, right: 10.0, bottom: 0.0),
         alignment: Alignment.centerRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: () => Router.navigator.pushNamed(Router.gatherUps),
           child: Text("View Details", style: TextStyle(fontSize: 15.0)),
         ));
 
@@ -613,7 +614,7 @@ class _HomeState extends State<Home> {
           '+\$2.30',
           style: TextStyle(
             fontSize: 24,
-            color: Colors.yellow[700],
+            color: Color(0xFFDAAA00),
           ),
           textAlign: TextAlign.left,
         ));
@@ -640,7 +641,7 @@ class _HomeState extends State<Home> {
                     '+\$0.5      ',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.blue[700],
+                      color: Color(0xFF00249C),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -682,7 +683,7 @@ class _HomeState extends State<Home> {
                     '+\$0.3      ',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.blue[700],
+                      color: Color(0xFF00249C),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -698,7 +699,7 @@ class _HomeState extends State<Home> {
                     '\$8',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.yellow[700],
+                      color: Color(0xFFDAAA00),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -724,7 +725,7 @@ class _HomeState extends State<Home> {
                     '+\$0.5      ',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.blue[700],
+                      color: Color(0xFF00249C),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -740,7 +741,7 @@ class _HomeState extends State<Home> {
                     '\$10',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.yellow[700],
+                      color: Color(0xFFDAAA00),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -766,7 +767,7 @@ class _HomeState extends State<Home> {
                     '+\$1.0      ',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.blue[700],
+                      color: Color(0xFF00249C),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -782,7 +783,7 @@ class _HomeState extends State<Home> {
                     '\$24',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.yellow[700],
+                      color: Color(0xFFDAAA00),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -809,7 +810,7 @@ class _HomeState extends State<Home> {
       child: Divider(
         indent: 5,
         endIndent: 20,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -831,7 +832,7 @@ class _HomeState extends State<Home> {
       child: Divider(
         indent: 5,
         endIndent: 20,
-        color: Colors.yellow[700],
+        color: Color(0xFFDAAA00),
         thickness: 1.5,
       ),
     );
@@ -843,7 +844,7 @@ class _HomeState extends State<Home> {
           'Find our app useful! Share it with your friends.',
           style: TextStyle(
             fontSize: 20,
-            color: Colors.blue[700],
+            color: Color(0xFF00249C),
           ),
           textAlign: TextAlign.left,
         ));
@@ -863,7 +864,7 @@ class _HomeState extends State<Home> {
             children: [
               Icon(
                 Icons.alternate_email,
-                color: Colors.blue[700],
+                color: Color(0xFF00249C),
               ),
               Text(
                 'Email',
@@ -890,7 +891,7 @@ class _HomeState extends State<Home> {
             children: [
               Icon(
                 Icons.mail,
-                color: Colors.blue[700],
+                color: Color(0xFF00249C),
               ),
               Text(
                 'Message',
@@ -948,7 +949,7 @@ class _HomeState extends State<Home> {
             children: [
               Icon(
                 Icons.share,
-                color: Colors.blue[700],
+                color: Color(0xFF00249C),
               ),
               Text(
                 'Others',
@@ -967,7 +968,7 @@ class _HomeState extends State<Home> {
           'Provide us Feedback',
           style: TextStyle(
             fontSize: 20,
-            color: Colors.blue[700],
+            color: Color(0xFF00249C),
             fontWeight: FontWeight.w900,
           ),
           textAlign: TextAlign.left,
@@ -1052,11 +1053,11 @@ class _HomeState extends State<Home> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Color(0xFF00249C),
         body: Container(
           child: Stack(children: <Widget>[
             Row(
@@ -1078,7 +1079,7 @@ class _HomeState extends State<Home> {
               child: Row(
                 children: [fyi, top_left_icon, fli, bell_icon],
               ),
-              decoration: BoxDecoration(color: Colors.blue[900]),
+              decoration: BoxDecoration(color: Color(0xFF00249C)),
             ),
           ]),
         ),

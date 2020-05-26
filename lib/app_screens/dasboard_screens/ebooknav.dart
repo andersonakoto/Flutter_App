@@ -1,12 +1,9 @@
 import 'dart:io';
-
-import 'package:FyiFli/app_screens/signup_3.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:FyiFli/routes/router.gr.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class EbookNav extends StatefulWidget {
@@ -135,7 +132,7 @@ class _NavDotsState extends State<NavDots> {
                     count: 3,
                     effect: WormEffect(
                         dotColor: Colors.grey[400],
-                        activeDotColor: Colors.yellow[700]),
+                        activeDotColor: Color(0xFFDAAA00)),
                   ),
                 ),
               ]),

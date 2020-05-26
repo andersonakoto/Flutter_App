@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -32,7 +33,7 @@ class _AddEditLoanState extends State<AddEditLoan> {
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
                 color: Colors.blue,
-                onPressed: () {},
+                onPressed: () => Router.navigator.pushNamed(Router.debtEliminator),
               ),
             ),
             Container(
@@ -57,7 +58,7 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 20.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Interest Rate',
           labelStyle: TextStyle(height: 0.5),
@@ -71,12 +72,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Loan Name',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -85,12 +86,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Bank Address',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color:Color(0xFF00249C)),
       ),
     );
 
@@ -99,12 +100,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Bank Name',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -113,12 +114,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Description',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -127,12 +128,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.numberWithOptions(signed: false, decimal: true),
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Monthly Payment',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -141,12 +142,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Payment Date',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -155,12 +156,12 @@ class _AddEditLoanState extends State<AddEditLoan> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
           labelText: 'Loan Duration',
           labelStyle: TextStyle(height: 0.5),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -175,7 +176,7 @@ class _AddEditLoanState extends State<AddEditLoan> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.debtEliminator),
           child: Text(
             "Submit",
             style: TextStyle(fontSize: 20.0),
@@ -185,7 +186,7 @@ class _AddEditLoanState extends State<AddEditLoan> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,

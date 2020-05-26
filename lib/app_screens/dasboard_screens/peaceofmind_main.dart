@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -38,8 +39,8 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
                   EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: () => Router.navigator.pushNamed(Router.dashboard),
               ),
             ),
             Container(
@@ -61,10 +62,10 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
         margin: EdgeInsets.only(left: 20.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color:Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.savingTools),
           child: Text(
             "Goals",
             style: TextStyle(fontSize: 15.0),
@@ -75,10 +76,10 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
         margin: EdgeInsets.only(left: 10.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.gatherUps),
           child: Text(
             "Gather Ups",
             style: TextStyle(fontSize: 15.0),
@@ -89,10 +90,10 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
         margin: EdgeInsets.only(left: 5.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
-          textColor: Colors.grey[700],
-          onPressed: () {},
+          textColor:Colors.grey[700],
+          onPressed: () => Router.navigator.pushNamed(Router.peaceofMind_Main),
           child: Text(
             "Peace Of Mind",
             style: TextStyle(fontSize: 15.0),
@@ -303,7 +304,7 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.w900,
-                      color: Colors.yellow[700],
+                      color: Color(0xFFDAAA00),
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -357,7 +358,7 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
           'Spendable Income',
           style: TextStyle(
             fontSize: 15,
-            color: Colors.yellow[700],
+            color: Color(0xFFDAAA00),
           ),
           textAlign: TextAlign.left,
         ));
@@ -376,7 +377,7 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
+      title: 'Fyi Fli',
       theme: ThemeData(fontFamily: 'Gilroy'),
       home: Scaffold(
         resizeToAvoidBottomInset: true,

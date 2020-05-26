@@ -89,6 +89,13 @@ flutter:
      - assets/images/sort3.png
      - assets/images/grocery.png
      - assets/images/sandwich.png
+     - assets/images/profile_main.png
+     - assets/images/profile_sub.png
+     - assets/images/more.png
+     - assets/images/twitter.png
+     - assets/images/facebook_yellow.png
+     - assets/images/instagram.png
+     - assets/images/in.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

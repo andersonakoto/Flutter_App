@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -31,8 +33,8 @@ class _Signup4State extends State<Signup4> {
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+               onPressed: () => Router.navigator.pushNamed(Router.signup_3),
               ),
             ),
             Container(
@@ -67,12 +69,18 @@ class _Signup4State extends State<Signup4> {
             left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
         child: TextField(
           keyboardType: TextInputType.text,
-          cursorColor: Colors.blue,
+          cursorColor: Color(0xFF00249C),
           decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF00249C)),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF00249C)),
+            ),
             labelText: 'Name',
-            labelStyle: TextStyle(height: 0.5),
+            labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
           ),
-          style: TextStyle(height: 2.0, color: Colors.blue),
+          style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
         ),
       );
 
@@ -81,12 +89,18 @@ class _Signup4State extends State<Signup4> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.emailAddress,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Email Address',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -95,12 +109,18 @@ class _Signup4State extends State<Signup4> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Username',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -109,13 +129,19 @@ class _Signup4State extends State<Signup4> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.visiblePassword,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         obscureText: true,
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Password',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -124,12 +150,18 @@ class _Signup4State extends State<Signup4> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.phone,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Phonenumber',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -142,7 +174,7 @@ class _Signup4State extends State<Signup4> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.dashboard),
           child: Text(
             "Continue",
             style: TextStyle(fontSize: 20.0),
@@ -163,8 +195,8 @@ class _Signup4State extends State<Signup4> {
         margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+         onPressed: () => Router.navigator.pushNamed(Router.congratulations),
           child: Text("Sign Up",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
@@ -184,55 +216,57 @@ class _Signup4State extends State<Signup4> {
         margin: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 30.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: () => Router.navigator.pushNamed(Router.loginScreen),
           child: Text("Login here.",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        intro,
-                        name_field,
-                        email_field,
-                        user_field,
-                        password_field,
-                        phone_field,
-                        signup_button,
-                        Row(
-                          children: [leftSection, rightSection],
-                        ),
-                        Row(
-                          children: [leftSection2, rightSection2],
-                        )
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fly Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          intro,
+                          name_field,
+                          email_field,
+                          user_field,
+                          password_field,
+                          phone_field,
+                          signup_button,
+                          Row(
+                            children: [leftSection, rightSection],
+                          ),
+                          Row(
+                            children: [leftSection2, rightSection2],
+                          )
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
-
+      );
+    });
   }
 }

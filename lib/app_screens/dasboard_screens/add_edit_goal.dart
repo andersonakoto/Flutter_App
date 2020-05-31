@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -60,8 +61,14 @@ class _AddEditGoalState extends State<AddEditGoal> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Goal Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -74,8 +81,14 @@ class _AddEditGoalState extends State<AddEditGoal> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Description',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -88,8 +101,14 @@ class _AddEditGoalState extends State<AddEditGoal> {
         keyboardType: TextInputType.numberWithOptions(signed: false, decimal: true),
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Amount',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -113,42 +132,44 @@ class _AddEditGoalState extends State<AddEditGoal> {
         ));
 
 
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          goal_name_field,
+                          goal_description_field,
+                          goal_amount_field,
+                          submit_goal,
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        goal_name_field,
-                        goal_description_field,
-                        goal_amount_field,
-                        submit_goal,
-
-                      ],
-                    )),
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 

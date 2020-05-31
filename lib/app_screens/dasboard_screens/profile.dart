@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -64,9 +65,9 @@ class _ProfileState extends State<Profile> {
             child: PopupMenuButton<menu_items>(
               icon: Icon(Icons.more_vert, color: Colors.white),
               onSelected: (menu_items result) { setState(() {
-//                Router.navigator.pushNamed(Router.signup_5);
-//                Router.navigator.pushNamed(Router.addBankAccount);
-//                Router.navigator.pushNamed(Router.editProfile);
+                Router.navigator.pushNamed(Router.signup_5);
+                Router.navigator.pushNamed(Router.addBankAccount);
+                Router.navigator.pushNamed(Router.editProfile);
               }); },
               itemBuilder: (BuildContext context) => <PopupMenuEntry<menu_items>>[
                 const PopupMenuItem<menu_items>(
@@ -187,7 +188,8 @@ class _ProfileState extends State<Profile> {
 
 
     Widget info_container = Container(
-        margin: EdgeInsets.only(left: 30.0, top: 260.0, right: 30.0, bottom: 0.0),
+        margin: EdgeInsets.only(left: 30.0, top: 260.0, right: 30.0, bottom: 10.0),
+        padding: EdgeInsets.all(10),
         alignment: Alignment.center,
         height: 200,
         width: 300,
@@ -199,11 +201,6 @@ class _ProfileState extends State<Profile> {
           )
         ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
         child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(
-                  left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-              child: Column(
                 children: [
                   Text(
                     '100',
@@ -225,11 +222,11 @@ class _ProfileState extends State<Profile> {
                      alignment: Alignment.center,
                      child: FlatButton(
                      textColor: Color(0xFF00249C),
-                       onPressed: () {},
+                       onPressed: () => Router.navigator.pushNamed(Router.peopleYouMayKnow),
                        child: Text("People You May Know", style: TextStyle(fontSize: 20.0, decoration: TextDecoration.underline, fontWeight: FontWeight.w900)),
                     )),
               Container(
-                margin: EdgeInsets.only(left: 50),
+                margin: EdgeInsets.only(left: 40),
                 child: Row(
                children:[
                  IconButton(
@@ -252,9 +249,7 @@ class _ProfileState extends State<Profile> {
             ),
           ],
               ),
-    )
-    ])
-    );
+        );
 
     Widget job_container = Container(
         margin: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 0.0),
@@ -399,38 +394,41 @@ class _ProfileState extends State<Profile> {
             ],))
     ]));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.white,
-        body: Container(
-      child: Stack(children: <Widget>[
-        top_container,
-        info_container,
-        Container(
-          child: SingleChildScrollView(
-            child: Container(
-                margin: EdgeInsets.only(top: 470),
-                child: Column(
-                  children: <Widget>[
-                    sub_container,
-                  ],
-                )),
-          ),
-        ),
-        Container(
-          height: 80,
-          child: Row(
-            children: [topPart],
-          ),
-          decoration: BoxDecoration(color: Color(0xFF00249C)),
-        ),
-        ]),
-    ),
-        )
-    );
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Fyi Fli',
+          theme: ThemeData(fontFamily: 'Gilroy'),
+          home: Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.white,
+            body: Container(
+              child: Stack(children: <Widget>[
+                top_container,
+                Container(
+                  child: SingleChildScrollView(
+                    child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: Column(
+                          children: <Widget>[
+                            info_container,
+                            sub_container,
+                          ],
+                        )),
+                  ),
+                ),
+                Container(
+                  height: 80,
+                  child: Row(
+                    children: [topPart],
+                  ),
+                  decoration: BoxDecoration(color: Color(0xFF00249C)),
+                ),
+              ]),
+            ),
+          )
+      );
+    });
   }
 }

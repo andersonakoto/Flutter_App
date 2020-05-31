@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -31,8 +33,8 @@ class _Signup3State extends State<Signup3> {
                   EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: () => Router.navigator.pushNamed(Router.signup_2),
               ),
             ),
             Container(
@@ -74,7 +76,7 @@ class _Signup3State extends State<Signup3> {
                 'Unfamiliar',
                 style: TextStyle(
                     fontSize: 15,
-                    color: Colors.yellow[800],
+                    color: Color(0xFFDAAA00),
                     fontWeight: FontWeight.w700),
                 textAlign: TextAlign.center,
               ),
@@ -86,7 +88,7 @@ class _Signup3State extends State<Signup3> {
                 'Familiar',
                 style: TextStyle(
                     fontSize: 15,
-                    color: Colors.yellow[800],
+                    color: Color(0xFFDAAA00),
                     fontWeight: FontWeight.w700),
                 textAlign: TextAlign.center,
               ),
@@ -98,7 +100,7 @@ class _Signup3State extends State<Signup3> {
                 'Expert',
                 style: TextStyle(
                     fontSize: 15,
-                    color: Colors.yellow[800],
+                    color: Color(0xFFDAAA00),
                     fontWeight: FontWeight.w700),
                 textAlign: TextAlign.center,
               ),
@@ -108,12 +110,86 @@ class _Signup3State extends State<Signup3> {
 
     List<String> _checked = ["unfamiliar"];
 
+    Widget unfamiliar = Container(
+      child: Column(
+        children: [
+          Container(
+            margin:
+                EdgeInsets.only(left: 10.0, top: 0.0, right: 0.0, bottom: 0.0),
+            child: CheckboxGroup(
+              orientation: GroupedButtonsOrientation.HORIZONTAL,
+              margin: const EdgeInsets.only(left: 0.0),
+              onSelected: (List selected) => setState(() {
+                _checked = selected;
+              }),
+              labels: <String>["unfamiliar"],
+              //checked: _checked,
+              itemBuilder: (Checkbox cb, Text txt, int i) {
+                return Column(
+                  children: <Widget>[cb],
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+
+    Widget familiar = Container(
+      child: Column(
+        children: [
+          Container(
+            margin:
+                EdgeInsets.only(left: 25.0, top: 0.0, right: 0.0, bottom: 0.0),
+            child: CheckboxGroup(
+              orientation: GroupedButtonsOrientation.HORIZONTAL,
+              margin: const EdgeInsets.only(left: 0.0),
+              onSelected: (List selected) => setState(() {
+                _checked = selected;
+              }),
+              labels: <String>["familiar"],
+              //checked: _checked,
+              itemBuilder: (Checkbox cb, Text txt, int i) {
+                return Column(
+                  children: <Widget>[cb],
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+    Widget expert = Container(
+      child: Column(
+        children: [
+          Container(
+            margin:
+                EdgeInsets.only(left: 20.0, top: 0.0, right: 0.0, bottom: 0.0),
+            child: CheckboxGroup(
+              orientation: GroupedButtonsOrientation.HORIZONTAL,
+              margin: const EdgeInsets.only(left: 0.0),
+              onSelected: (List selected) => setState(() {
+                _checked = selected;
+              }),
+              labels: <String>["expert"],
+              //checked: _checked,
+              itemBuilder: (Checkbox cb, Text txt, int i) {
+                return Column(
+                  children: <Widget>[cb],
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+
     Widget box_invest = Container(
       alignment: Alignment.topCenter,
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 30.0, right: 0.0, bottom: 15.0),
           child: Text(
             'Investing',
             style: TextStyle(
@@ -121,60 +197,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 45.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 0.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -185,7 +207,7 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 15.0),
           child: Text(
             'Insurance',
             style: TextStyle(
@@ -193,60 +215,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 10.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -257,7 +225,7 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 15.0),
           child: Text(
             'Taxes',
             style: TextStyle(
@@ -265,60 +233,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 40.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -329,7 +243,7 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 15.0, right: 0.0, bottom: 15.0),
           child: Text(
             'Credit',
             style: TextStyle(
@@ -337,60 +251,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 38.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -401,7 +261,7 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 15.0, right: 0.0, bottom: 20.0),
           child: Text(
             'Debit',
             style: TextStyle(
@@ -409,60 +269,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 43.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -473,7 +279,7 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 5.0, right: 0.0, bottom: 20.0),
           child: Text(
             'Credit Cards',
             style: TextStyle(
@@ -481,60 +287,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 18.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -545,7 +297,7 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 5.0, right: 0.0, bottom: 20.0),
           child: Text(
             'Internet Rates',
             style: TextStyle(
@@ -553,60 +305,6 @@ class _Signup3State extends State<Signup3> {
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 6.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -617,68 +315,14 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 5.0, right: 0.0, bottom: 15.0),
           child: Text(
-            'Inflation',
+            'Inflation ',
             style: TextStyle(
                 color: Colors.grey[800],
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 49.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -689,68 +333,14 @@ class _Signup3State extends State<Signup3> {
       child: Row(children: <Widget>[
         Container(
           margin:
-              EdgeInsets.only(left: 20.0, top: 10.0, right: 0.0, bottom: 0.0),
+              EdgeInsets.only(left: 20.0, top: 5.0, right: 0.0, bottom: 10.0),
           child: Text(
-            '401K &\nRetirement',
+            '401K &\nRetirement ',
             style: TextStyle(
                 color: Colors.grey[800],
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
             textAlign: TextAlign.left,
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 28.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["unfamiliar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 30.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["familiar"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
-          ),
-        ),
-        Container(
-          margin:
-              EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-          child: CheckboxGroup(
-            orientation: GroupedButtonsOrientation.HORIZONTAL,
-            margin: const EdgeInsets.only(left: 20.0),
-            onSelected: (List selected) => setState(() {
-              _checked = selected;
-            }),
-            labels: <String>["expert"],
-            //checked: _checked,
-            itemBuilder: (Checkbox cb, Text txt, int i) {
-              return Column(
-                children: <Widget>[cb],
-              );
-            },
           ),
         ),
       ]),
@@ -765,7 +355,7 @@ class _Signup3State extends State<Signup3> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.signup_4),
           child: Text(
             "Sign Up",
             style: TextStyle(fontSize: 20.0),
@@ -778,7 +368,8 @@ class _Signup3State extends State<Signup3> {
       child: Text(
         "Skip  & ",
         textAlign: TextAlign.right,
-        style: TextStyle(fontSize: 20, color: Colors.grey[800], fontWeight: FontWeight.w900),
+        style: TextStyle(
+            fontSize: 20, color: Colors.grey[800], fontWeight: FontWeight.w900),
       ),
     );
 
@@ -786,56 +377,98 @@ class _Signup3State extends State<Signup3> {
         margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 30.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: () => Router.navigator.pushNamed(Router.loginScreen),
           child: Text("Sign Up",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        rankText,
-                        checkTitles,
-                        box_invest,
-                        box_insurance,
-                        box_taxes,
-                        box_credit,
-                        box_debit,
-                        box_cards,
-                        box_internet,
-                        box_inflation,
-                        box_retire,
-                        signup_button,
-                        Row(
-                          children: [leftSection, rightSection],
-                        )
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                    children: <Widget>[
+                      topPart,
+                      rankText,
+                      checkTitles,
+                      Container(
+                        child: Row(children: [
+                          Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                            box_invest,
+                            box_insurance,
+                            box_taxes,
+                            box_credit,
+                            box_debit,
+                            box_cards,
+                            box_internet,
+                            box_inflation,
+                            box_retire,
+                          ]),
+                          Column(children: [
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                            unfamiliar,
+                          ]),
+                          Column(children: [
+                            familiar,
+                            familiar,
+                            familiar,
+                            familiar,
+                            familiar,
+                            familiar,
+                            familiar,
+                            familiar,
+                            familiar,
+                          ]),
+                          Column(children: [
+                            expert,
+                            expert,
+                            expert,
+                            expert,
+                            expert,
+                            expert,
+                            expert,
+                            expert,
+                            expert,
+                          ]),
+                        ]),
+                      ),
+                      signup_button,
+                      Row(
+                        children: [leftSection, rightSection],
+                      )
+                    ],
+                  )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

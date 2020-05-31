@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -82,8 +83,14 @@ class _AddBankAccountState extends State<AddBankAccount> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -96,8 +103,14 @@ class _AddBankAccountState extends State<AddBankAccount> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Account Number',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -110,8 +123,14 @@ class _AddBankAccountState extends State<AddBankAccount> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Bank Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -125,8 +144,14 @@ class _AddBankAccountState extends State<AddBankAccount> {
         cursorColor: Color(0xFF00249C),
         obscureText: true,
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Bank Location',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -169,45 +194,48 @@ class _AddBankAccountState extends State<AddBankAccount> {
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        set_up_intro,
-                        link_your,
-                        name_field,
-                        account_field,
-                        bank_field,
-                        bank_location_field,
-                        setup_button,
-                        Row(
-                          children: [leftSection, rightSection],
-                        ),
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          set_up_intro,
+                          link_your,
+                          name_field,
+                          account_field,
+                          bank_field,
+                          bank_location_field,
+                          setup_button,
+                          Row(
+                            children: [leftSection, rightSection],
+                          ),
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

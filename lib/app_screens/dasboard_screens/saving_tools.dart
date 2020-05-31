@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:extended_tabs/extended_tabs.dart';
 import 'package:flutter/cupertino.dart';
@@ -561,43 +562,46 @@ class _SavingToolsState extends State<SavingTools> with TickerProviderStateMixin
       ),
       );
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        Row(
-                            children: [goals, gatherUps, peace]
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(20),
-                        child: tab,
-                        ),
-                      ],
-                    )
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          Row(
+                              children: [goals, gatherUps, peace]
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(20),
+                            child: tab,
+                          ),
+                        ],
+                      )
+                  ),
                 ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

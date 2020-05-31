@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -168,33 +169,36 @@ class _CongratulationsState extends State<Congratulations> {
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              congratsTitle,
-              linkedTitle,
-              congratsImage,
-              Row(
-                children: [balance, amount]
-              ),
-              whats_next,
-              expenses_button,
-              peace_of_mind_button,
-              Row(
-                children: [leftSection, rightSection],
-              ),
-            ],
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                congratsTitle,
+                linkedTitle,
+                congratsImage,
+                Row(
+                    children: [balance, amount]
+                ),
+                whats_next,
+                expenses_button,
+                peace_of_mind_button,
+                Row(
+                  children: [leftSection, rightSection],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 
 

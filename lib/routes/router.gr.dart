@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/router_utils.dart';
 import 'package:FyiFli/app_screens/launcher.dart';
+import 'package:FyiFli/app_screens/log_in.dart';
 import 'package:FyiFli/app_screens/signup_2.dart';
 import 'package:FyiFli/app_screens/signup_3.dart';
 import 'package:FyiFli/app_screens/signup_4.dart';
@@ -43,6 +44,9 @@ import 'package:FyiFli/app_screens/dasboard_screens/saving_tools.dart';
 
 class Router {
   static const launcher = '/launcher';
+  static const onboarding_1 = '/onboarding_1';
+  static const onboarding_2 = '/onboarding_2';
+  static const onboarding_3 = '/onboarding_3';
   static const loginScreen = '/login-screen';
   static const signup_2 = '/signup_2';
   static const signup_3 = '/signup_3';
@@ -86,6 +90,21 @@ class Router {
       case Router.launcher:
         return MaterialPageRoute(
           builder: (_) => Launcher(),
+          settings: settings,
+        );
+      case Router.onboarding_1:
+        return MaterialPageRoute(
+          builder: (_) => Onboarding_1(),
+          settings: settings,
+        );
+      case Router.onboarding_2:
+        return MaterialPageRoute(
+          builder: (_) => Onboarding_2(),
+          settings: settings,
+        );
+      case Router.onboarding_3:
+        return MaterialPageRoute(
+          builder: (_) => Onboarding_3(),
           settings: settings,
         );
       case Router.loginScreen:

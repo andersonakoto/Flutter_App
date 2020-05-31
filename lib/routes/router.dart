@@ -23,6 +23,7 @@ import 'package:FyiFli/app_screens/dasboard_screens/reports.dart';
 import 'package:FyiFli/app_screens/dasboard_screens/saving_tools.dart';
 import 'package:FyiFli/app_screens/dashboard.dart';
 import 'package:FyiFli/app_screens/launcher.dart';
+import 'package:FyiFli/app_screens/log_in.dart';
 import 'package:FyiFli/app_screens/modals/college_students.dart';
 import 'package:FyiFli/app_screens/modals/graduates.dart';
 import 'package:FyiFli/app_screens/modals/high_school_students.dart';
@@ -37,6 +38,9 @@ import 'package:auto_route/auto_route_annotations.dart';
 @autoRouter
 class $Router {
   Launcher launcher;
+  Onboarding_1 onboarding_1;
+  Onboarding_2 onboarding_2;
+  Onboarding_3 onboarding_3;
   LoginScreen loginScreen;
   Signup2 signup_2;
   Signup3 signup_3;

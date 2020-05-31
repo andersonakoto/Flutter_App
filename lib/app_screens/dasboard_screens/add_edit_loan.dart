@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -60,8 +61,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Interest Rate',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Colors.blue),
       ),
@@ -74,8 +81,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Loan Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -88,8 +101,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Bank Address',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color:Color(0xFF00249C)),
       ),
@@ -102,8 +121,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Bank Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -116,8 +141,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Description',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -130,8 +161,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.numberWithOptions(signed: false, decimal: true),
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Monthly Payment',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -144,8 +181,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Payment Date',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -158,8 +201,14 @@ class _AddEditLoanState extends State<AddEditLoan> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Loan Duration',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -184,45 +233,48 @@ class _AddEditLoanState extends State<AddEditLoan> {
         ));
 
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        interest_rate_field,
-                        loan_name_field,
-                        bank_address_field,
-                        bank_name_field,
-                        loan_description,
-                        monthly_payment,
-                        payment_date,
-                        loan_duration,
-                        submit_loan
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          interest_rate_field,
+                          loan_name_field,
+                          bank_address_field,
+                          bank_name_field,
+                          loan_description,
+                          monthly_payment,
+                          payment_date,
+                          loan_duration,
+                          submit_loan
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 

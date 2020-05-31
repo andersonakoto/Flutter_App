@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:FyiFli/app_screens/dasboard_screens/ebooknav.dart';
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -151,14 +152,14 @@ class _HomeState extends State<Home> {
 
     Widget student_debt_button = Container(
         margin:
-            EdgeInsets.only(left: 20.0, top: 40.0, right: 40.0, bottom: 0.0),
+            EdgeInsets.only(left: 25.0, top: 40.0, right: 40.0, bottom: 0.0),
         width: 80,
         height: 80,
         alignment: Alignment.center,
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {},
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 2, 10, 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -187,7 +188,7 @@ class _HomeState extends State<Home> {
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {},
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 2, 10, 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -216,7 +217,7 @@ class _HomeState extends State<Home> {
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {},
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 2, 10, 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -239,14 +240,14 @@ class _HomeState extends State<Home> {
 
     Widget retirement_button = Container(
         margin:
-            EdgeInsets.only(left: 20.0, top: 40.0, right: 40.0, bottom: 0.0),
+            EdgeInsets.only(left: 25.0, top: 40.0, right: 40.0, bottom: 0.0),
         width: 80,
         height: 80,
         alignment: Alignment.center,
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {},
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 2, 10, 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -275,7 +276,7 @@ class _HomeState extends State<Home> {
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {},
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 2, 10, 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -304,7 +305,7 @@ class _HomeState extends State<Home> {
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {},
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 2, 10, 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -1051,39 +1052,42 @@ class _HomeState extends State<Home> {
       ),
     );
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: Color(0xFF00249C),
-        body: Container(
-          child: Stack(children: <Widget>[
-            Row(
-              children: [welcome, welcome_image],
-            ),
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    margin: EdgeInsets.only(top: 200),
-                    child: Column(
-                      children: <Widget>[
-                        sub_container,
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: false,
+          backgroundColor: Color(0xFF00249C),
+          body: Container(
+            child: Stack(children: <Widget>[
+              Row(
+                children: [welcome, welcome_image],
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [fyi, top_left_icon, fli, bell_icon],
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      margin: EdgeInsets.only(top: 200),
+                      child: Column(
+                        children: <Widget>[
+                          sub_container,
+                        ],
+                      )),
+                ),
               ),
-              decoration: BoxDecoration(color: Color(0xFF00249C)),
-            ),
-          ]),
+              Container(
+                height: 80,
+                child: Row(
+                  children: [fyi, top_left_icon, fli, bell_icon],
+                ),
+                decoration: BoxDecoration(color: Color(0xFF00249C)),
+              ),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

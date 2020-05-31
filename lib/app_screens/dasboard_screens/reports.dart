@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/cupertino.dart';
@@ -453,58 +454,75 @@ class _ReportsState extends State<Reports> {
           ],
         ));
 
-
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        reportTitle,
-                        Row(
-                        children: [live_budgeting, Expanded(child: budget_line)]
-                        ),
-                        Row(
-                            children: [daily, monthly, yearly]
-                        ),
-                        gather_container1,
-                        Row(
-                            children: [saving_goal, Expanded(child: saving_line)]
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 0.0),
-                          child: goal,
-                        ),
-                        Row(
-                            children: [debt_eliminator, Expanded(child: debt_line)]
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 20.0, top: 0.0, right: 20.0, bottom: 40.0),
-                          child: loan,
-                        ),
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          reportTitle,
+                          Row(
+                              children: [
+                                live_budgeting,
+                                Expanded(child: budget_line)
+                              ]
+                          ),
+                          Row(
+                              children: [daily, monthly, yearly]
+                          ),
+                          gather_container1,
+                          Row(
+                              children: [
+                                saving_goal,
+                                Expanded(child: saving_line)
+                              ]
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20.0,
+                                top: 40.0,
+                                right: 20.0,
+                                bottom: 0.0),
+                            child: goal,
+                          ),
+                          Row(
+                              children: [
+                                debt_eliminator,
+                                Expanded(child: debt_line)
+                              ]
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20.0,
+                                top: 0.0,
+                                right: 20.0,
+                                bottom: 40.0),
+                            child: loan,
+                          ),
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [reportTitle],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [reportTitle],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 

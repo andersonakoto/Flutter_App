@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -286,138 +287,164 @@ class _ConnectedProfileState extends State<ConnectedProfile> {
               ))
         ]));
 
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Fyi Fli',
-        theme: ThemeData(fontFamily: 'Gilroy'),
-        home: Scaffold(
-          endDrawer: Drawer(
-            // Add a ListView to the drawer. This ensures the user can scroll
-            // through the options in the drawer if there isn't enough vertical
-            // space to fit everything.
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-              padding: EdgeInsets.only(top: 80),
-              children: <Widget>[
-                ListTile(
-                  title: Text('Live Budgeting Tool', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Goals', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Gather Ups', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Peace of Mind', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Debt Eliminator', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Reports', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Add Credit Card', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Add Savings Account', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('FYI FLI can improve by...', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('Logout', textAlign: TextAlign.right, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Fyi Fli',
+          theme: ThemeData(fontFamily: 'Gilroy'),
+          home: Scaffold(
+            endDrawer: Drawer(
+              // Add a ListView to the drawer. This ensures the user can scroll
+              // through the options in the drawer if there isn't enough vertical
+              // space to fit everything.
+              child: ListView(
+                // Important: Remove any padding from the ListView.
+                padding: EdgeInsets.only(top: 80),
+                children: <Widget>[
+                  ListTile(
+                    title: Text(
+                        'Live Budgeting Tool', textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w900)),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Goals', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Gather Ups', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Peace of Mind', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Debt Eliminator', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Reports', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Add Credit Card', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text(
+                      'Add Savings Account', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text(
+                      'FYI FLI can improve by...', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Logout', textAlign: TextAlign.right,
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w900),),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
-          resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.white,
-          body: Container(
-            child: Stack(children: <Widget>[
-              top_container,
-              info_container,
-              Container(
-                child: SingleChildScrollView(
-                  child: Container(
-                      margin: EdgeInsets.only(top: 470),
-                      child: Column(
-                        children: <Widget>[
-                          sub_container,
-                        ],
-                      )),
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.white,
+            body: Container(
+              child: Stack(children: <Widget>[
+                top_container,
+                info_container,
+                Container(
+                  child: SingleChildScrollView(
+                    child: Container(
+                        margin: EdgeInsets.only(top: 470),
+                        child: Column(
+                          children: <Widget>[
+                            sub_container,
+                          ],
+                        )),
+                  ),
                 ),
-              ),
-              Container(
-                height: 80,
-                child: Row(
-                  children: [topPart],
+                Container(
+                  height: 80,
+                  child: Row(
+                    children: [topPart],
+                  ),
+                  decoration: BoxDecoration(color: Color(0xFF00249C)),
                 ),
-                decoration: BoxDecoration(color: Color(0xFF00249C)),
-              ),
-            ]),
-          ),
-        ));
+              ]),
+            ),
+          ));
+    });
   }
 }

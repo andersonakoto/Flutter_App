@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -102,42 +103,44 @@ class _NavDotsState extends State<NavDots> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  height: 300,
-                  child: PageView(
-                    controller: controller,
-                    children: [
-                      Ebook_1,
-                      Ebook_2,
-                      Ebook_3,
-                    ],
+    return BaseWidget(builder: (context, sizingInformation) {
+      return Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    height: 300,
+                    child: PageView(
+                      controller: controller,
+                      children: [
+                        Ebook_1,
+                        Ebook_2,
+                        Ebook_3,
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
-                  child: SmoothPageIndicator(
-                    controller: controller,
-                    count: 3,
-                    effect: WormEffect(
-                        dotColor: Colors.grey[400],
-                        activeDotColor: Color(0xFFDAAA00)),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
                   ),
-                ),
-              ]),
+                  Container(
+                    margin: EdgeInsets.only(
+                        left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+                    child: SmoothPageIndicator(
+                      controller: controller,
+                      count: 3,
+                      effect: WormEffect(
+                          dotColor: Colors.grey[400],
+                          activeDotColor: Color(0xFFDAAA00)),
+                    ),
+                  ),
+                ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

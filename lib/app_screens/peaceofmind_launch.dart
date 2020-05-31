@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -31,8 +33,8 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: ()=> Router.navigator.pushNamed(Router.congratulations),
               ),
             ),
             Container(
@@ -56,10 +58,10 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
         EdgeInsets.only(left: 20.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+          onPressed: ()=> Router.navigator.pushNamed(Router.savingTools),
           child: Text(
             "Goals",
             style: TextStyle(fontSize: 15.0),
@@ -71,10 +73,10 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
         EdgeInsets.only(left: 5.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+          onPressed: ()=> Router.navigator.pushNamed(Router.gatherUps),
           child: Text(
             "Gather Ups",
             style: TextStyle(fontSize: 15.0),
@@ -86,10 +88,10 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
         EdgeInsets.only(left: 5.0, top: 40.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Color(0xFFDAAA00), borderRadius: BorderRadius.circular(20)),
         child: FlatButton(
           textColor: Colors.grey[700],
-          onPressed: () {},
+          onPressed: ()=> Router.navigator.pushNamed(Router.peaceofMind_Main),
           child: Text(
             "Peace Of Mind",
             style: TextStyle(fontSize: 15.0),
@@ -103,7 +105,7 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
           "Peace Of Mind Fund",
           style: TextStyle(
               fontSize: 20,
-              color: Colors.blue,
+              color: Color(0xFF00249C),
               fontWeight: FontWeight.w700),
           textAlign: TextAlign.center,
         ));
@@ -130,7 +132,7 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushNamed(Router.addBankAccount),
           child: Text(
             "Open a Savings Account",
             style: TextStyle(fontSize: 20.0),
@@ -147,7 +149,7 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
             margin: EdgeInsets.only(left: 20.0),
             child: FlatButton(
               textColor: Colors.white,
-              onPressed: () {},
+             onPressed: () => Router.navigator.pushNamed(Router.dashboard),
               child: Text(
                 "I have a Savings Account",
                 style: TextStyle(fontSize: 20.0),
@@ -171,51 +173,54 @@ class _Peaceofmind_LaunchState extends State<Peaceofmind_Launch> {
         margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 30.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: () => Router.navigator.pushNamed(Router.loginScreen),
           child: Text("Sign Up",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        peaceTitle,
-                        Row(
-                            children: [goals, gatherUps, peace]
-                        ),
-                        peace_of_mind_fund,
-                        open_savings_text,
-                        open_savings_button,
-                        have_savings_button,
-                        Row(
-                          children: [leftSection, rightSection],
-                        ),
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          peaceTitle,
+                          Row(
+                              children: [goals, gatherUps, peace]
+                          ),
+                          peace_of_mind_fund,
+                          open_savings_text,
+                          open_savings_button,
+                          have_savings_button,
+                          Row(
+                            children: [leftSection, rightSection],
+                          ),
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [peaceTitle],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [peaceTitle],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
+
 }

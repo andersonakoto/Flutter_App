@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -31,8 +33,8 @@ class _Signup5State extends State<Signup5> {
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: ()=> Router.navigator.pushNamed(Router.signup_4),
               ),
             ),
             Container(
@@ -67,12 +69,19 @@ class _Signup5State extends State<Signup5> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.number,
-        cursorColor: Colors.blue,
-        decoration: InputDecoration(
-          labelText: 'Credit Card Number',
-          labelStyle: TextStyle(height: 0.5),
+        cursorColor: Color(0xFF00249C),
+
+      decoration: InputDecoration(
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Color(0xFF00249C)),
+        ),
+        labelText: 'Credit Card Number',
+        labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
+        ),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -81,12 +90,18 @@ class _Signup5State extends State<Signup5> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Name on Card',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -96,12 +111,18 @@ class _Signup5State extends State<Signup5> {
       width: 120,
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Expiry Date',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color:Color(0xFF00249C)),
 
       ),
     );
@@ -112,12 +133,18 @@ class _Signup5State extends State<Signup5> {
       width: 120,
       child: TextField(
         keyboardType: TextInputType.number,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'CC Code',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
-        style: TextStyle(height: 2.0, color: Colors.blue),
+        style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
     );
 
@@ -131,7 +158,7 @@ class _Signup5State extends State<Signup5> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: ()=> Router.navigator.pushNamed(Router.congratulations),
           child: Text(
             "Set up my Budgeting Tool",
             style: TextStyle(fontSize: 20.0),
@@ -152,7 +179,7 @@ class _Signup5State extends State<Signup5> {
         margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
+          textColor: Color(0xFFDAAA00),
           onPressed: () {},
           child: Text("Sign Up",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
@@ -173,54 +200,57 @@ class _Signup5State extends State<Signup5> {
         margin: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 30.0),
         alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: ()=> Router.navigator.pushNamed(Router.loginScreen),
           child: Text("Login here.",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        intro,
-                        card_number_field,
-                        card_name_field,
-                        Row(
-                          children: [expiry_field, cc_field],
-                        ),
-                        card_setup_button,
-                        Row(
-                          children: [leftSection, rightSection],
-                        ),
-                        Row(
-                          children: [leftSection2, rightSection2],
-                        )
-                      ],
-                    )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          intro,
+                          card_number_field,
+                          card_name_field,
+                          Row(
+                            children: [expiry_field, cc_field],
+                          ),
+                          card_setup_button,
+                          Row(
+                            children: [leftSection, rightSection],
+                          ),
+                          Row(
+                            children: [leftSection2, rightSection2],
+                          )
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

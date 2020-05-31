@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -124,8 +125,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -138,8 +145,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Describe Yourself',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color:Color(0xFF00249C)),
       ),
@@ -152,8 +165,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'College Name',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -166,8 +185,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'College Location',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -180,8 +205,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Graduation Year',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -194,8 +225,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Field of Study',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color:Color(0xFF00249C)),
       ),
@@ -208,8 +245,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Work Experience',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -222,8 +265,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
-          labelText: 'Employed at',
-          labelStyle: TextStyle(height: 0.5),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          labelText: 'Employed At',
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -236,8 +285,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Facebook Profile Link',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -250,8 +305,14 @@ class _EditProfileState extends State<EditProfile> {
         keyboardType: TextInputType.text,
         cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Linkedin Profile Link',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color:Color(0xFF00249C)),
       ),
@@ -261,10 +322,16 @@ class _EditProfileState extends State<EditProfile> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
-          labelText: 'Twitter Profile Link',
-          labelStyle: TextStyle(height: 0.5),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          labelText: 'Twitter Porfile Link',
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -274,10 +341,16 @@ class _EditProfileState extends State<EditProfile> {
           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
       child: TextField(
         keyboardType: TextInputType.text,
-        cursorColor: Colors.blue,
+        cursorColor: Color(0xFF00249C),
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF00249C)),
+          ),
           labelText: 'Instagram Profile Link',
-          labelStyle: TextStyle(height: 0.5),
+          labelStyle: TextStyle(height: 0.5, color: Color(0xFF00249C)),
         ),
         style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
       ),
@@ -327,37 +400,40 @@ class _EditProfileState extends State<EditProfile> {
                     ],))
             ]));
 
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Fyi Fli',
-        theme: ThemeData(fontFamily: 'Gilroy'),
-        home: Scaffold(
-          resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.white,
-          body: Container(
-            child: Stack(children: <Widget>[
-              top_container,
-              Container(
-                child: SingleChildScrollView(
-                  child: Container(
-                      margin: EdgeInsets.only(top: 270),
-                      child: Column(
-                        children: <Widget>[
-                          sub_container,
-                        ],
-                      )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Fyi Fli',
+          theme: ThemeData(fontFamily: 'Gilroy'),
+          home: Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.white,
+            body: Container(
+              child: Stack(children: <Widget>[
+                top_container,
+                Container(
+                  child: SingleChildScrollView(
+                    child: Container(
+                        margin: EdgeInsets.only(top: 270),
+                        child: Column(
+                          children: <Widget>[
+                            sub_container,
+                          ],
+                        )),
+                  ),
                 ),
-              ),
-              Container(
-                height: 80,
-                child: Row(
-                  children: [topPart],
+                Container(
+                  height: 80,
+                  child: Row(
+                    children: [topPart],
+                  ),
+                  decoration: BoxDecoration(color: Color(0xFF00249C)),
                 ),
-                decoration: BoxDecoration(color: Color(0xFF00249C)),
-              ),
-            ]),
-          ),
-        )
-    );
+              ]),
+            ),
+          )
+      );
+    });
   }
 }

@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
+import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -9,10 +11,12 @@ import 'package:grouped_buttons/grouped_buttons.dart';
 
 import 'custom_tile.dart';
 
+
 class Signup2 extends StatefulWidget {
   @override
   _Signup2State createState() => _Signup2State();
 }
+
 
 class _Signup2State extends State<Signup2> {
 
@@ -39,23 +43,25 @@ class _Signup2State extends State<Signup2> {
       statusBarIconBrightness: Brightness.dark,
     ));
 
+
+
     Widget college_name = TextField(
       keyboardType: TextInputType.text,
-      cursorColor: Colors.blue,
+      cursorColor: Color(0xFF00249C),
       decoration: InputDecoration(
         labelText: 'College Name',
         labelStyle: TextStyle(height: 0.5),
       ),
-      style: TextStyle(height: 2.0, color: Colors.blue),
+      style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
     );
     Widget college_location =TextField(
       keyboardType: TextInputType.text,
-      cursorColor: Colors.blue,
+      cursorColor: Color(0xFF00249C),
       decoration: InputDecoration(
         labelText: 'Location',
         labelStyle: TextStyle(height: 0.5),
       ),
-      style: TextStyle(height: 2.0, color: Colors.blue),
+      style: TextStyle(height: 2.0, color: Color(0xFF00249C)),
     );
 
 
@@ -63,6 +69,7 @@ class _Signup2State extends State<Signup2> {
 
         child: Row (
           children: [
+
             Radio(
                 value: 0,
                 groupValue: group,
@@ -73,15 +80,18 @@ class _Signup2State extends State<Signup2> {
                 }
             ),
             Text(
-              'What College Do You Plan On Attending?',
+              'What College Do You Plan On\nAttending?',
               style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 14,
                   color: Colors.grey[700],
                   fontWeight: FontWeight.w900
               ),
               textAlign: TextAlign.left,
             ),
-
+            IconButton(
+              icon: Icon(Icons.info_outline),
+              onPressed: () => Router.navigator.pushNamed(Router.highSchool),
+            ),
           ],
         )
     );
@@ -125,13 +135,17 @@ class _Signup2State extends State<Signup2> {
                 }
             ),
             Text(
-              'What college do you currently attend?',
+              'What college do you currently\nattend?',
               style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 14,
                   color: Colors.grey[700],
                   fontWeight: FontWeight.w900
               ),
               textAlign: TextAlign.left,
+            ),
+            IconButton(
+              icon: Icon(Icons.info_outline),
+            onPressed: () => Router.navigator.pushNamed(Router.collegeStudents),
             ),
 
           ],
@@ -178,11 +192,15 @@ class _Signup2State extends State<Signup2> {
             Text(
               'What college did you attend?',
               style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 14,
                   color: Colors.grey[700],
                   fontWeight: FontWeight.w900
               ),
               textAlign: TextAlign.left,
+            ),
+            IconButton(
+              icon: Icon(Icons.info_outline),
+             onPressed: () => Router.navigator.pushNamed(Router.graduates),
             ),
 
           ],
@@ -215,10 +233,10 @@ class _Signup2State extends State<Signup2> {
     );
 
     Widget do_not_plan = Container(
-        margin: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 0.0),
-        alignment: Alignment.center,
-        height: 55,
-        width: 330,
+        margin: EdgeInsets.only(left: 5.0, top: 5.0, right: 5.0, bottom: 0.0),
+//        alignment: Alignment.center,
+//        height: 55,
+//        width: 330,
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
             color: Colors.grey,
@@ -268,8 +286,8 @@ class _Signup2State extends State<Signup2> {
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: IconButton(
                 icon: Icon(Icons.arrow_back),
-                color: Colors.blue,
-                onPressed: () {},
+                color: Color(0xFF00249C),
+                onPressed: ()=> Router.navigator.pushNamed(Router.loginScreen),
               ),
             ),
             Container(
@@ -308,7 +326,7 @@ class _Signup2State extends State<Signup2> {
             color: Colors.grey[800], borderRadius: BorderRadius.circular(10)),
         child: FlatButton(
           textColor: Colors.white,
-          onPressed: () {},
+          onPressed: ()=> Router.navigator.pushNamed(Router.signup_3),
           child: Text(
             "Continue",
             style: TextStyle(fontSize: 20.0),
@@ -316,8 +334,8 @@ class _Signup2State extends State<Signup2> {
         ));
 
     Widget leftSection2 = Container(
-      margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 0.0, bottom: 30.0),
-      alignment: Alignment.bottomLeft,
+      margin: EdgeInsets.only(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0),
+//      alignment: Alignment.bottomLeft,
       child: Text(
         "Already have an account?",
         textAlign: TextAlign.right,
@@ -326,63 +344,71 @@ class _Signup2State extends State<Signup2> {
     );
 
     Widget rightSection2 = Container(
-        margin: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 30.0),
-        alignment: Alignment.bottomRight,
+//        margin: EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom: 30.0),
+//        alignment: Alignment.bottomRight,
         child: FlatButton(
-          textColor: Colors.yellow[700],
-          onPressed: () {},
+          textColor: Color(0xFFDAAA00),
+          onPressed: ()=> Router.navigator.pushNamed(Router.loginScreen),
           child: Text("Login here.",
               textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
         ));
 
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          topPart,
+                          intro,
+                          Container(
+                            margin: EdgeInsets.only(left: 10.0,
+                                top: 40.0,
+                                right: 10.0,
+                                bottom: 30.0),
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fly Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        topPart,
-                        intro,
-                        Container(
-                          margin: EdgeInsets.only(left: 10.0, top: 40.0, right: 10.0, bottom: 30.0),
-
-                          child: Column(
-                          children: [
-                            plan,
-                            current,
-                            past,
-                            do_not_plan
-                          ]
-                        ),
-                        ),
-                        signup_button,
-                        Row(
-                          children: [leftSection2, rightSection2],
-                        )
-                      ],
-                    )),
+                            child: Column(
+                                children: [
+                                  plan,
+                                  current,
+                                  past,
+                                  do_not_plan
+                                ]
+                            ),
+                          ),
+                          signup_button,
+                          Column(
+                            children: [leftSection2, rightSection2],
+                          )
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [topPart],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [topPart],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
 
   }
 }
+
+
+

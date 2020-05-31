@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -375,48 +376,51 @@ class _PeaceofMind_MainState extends State<PeaceofMind_Main> {
       ),
     );
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Fyi Fli',
-      theme: ThemeData(fontFamily: 'Gilroy'),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Stack(children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                    child: Column(
-                  children: <Widget>[
-                    peaceTitle,
-                    Row(children: [goals, gatherUps, peace]),
-                    formula,
-                    Row(
-                      children: [saving, formula_result],
-                    ),
-                    Row(
-                      children: [current_bal, monthly_expense],
-                    ),
-                    Row(
-                      children: [monthly_savings, spendable],
-                    ),
-                    gather_container,
-                    encourage
-                  ],
-                )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Fyi Fli',
+        theme: ThemeData(fontFamily: 'Gilroy'),
+        home: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: Colors.white,
+          body: Container(
+            child: Stack(children: <Widget>[
+              Container(
+                child: SingleChildScrollView(
+                  child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          peaceTitle,
+                          Row(children: [goals, gatherUps, peace]),
+                          formula,
+                          Row(
+                            children: [saving, formula_result],
+                          ),
+                          Row(
+                            children: [current_bal, monthly_expense],
+                          ),
+                          Row(
+                            children: [monthly_savings, spendable],
+                          ),
+                          gather_container,
+                          encourage
+                        ],
+                      )),
+                ),
               ),
-            ),
-            Container(
-              height: 80,
-              child: Row(
-                children: [peaceTitle],
+              Container(
+                height: 80,
+                child: Row(
+                  children: [peaceTitle],
+                ),
+                decoration: BoxDecoration(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ]),
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

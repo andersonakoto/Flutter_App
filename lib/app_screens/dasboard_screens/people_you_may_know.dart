@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:FyiFli/app_screens/ui/base_widget.dart';
 import 'package:FyiFli/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -64,9 +65,9 @@ class _PeopleYouMayKnowState extends State<PeopleYouMayKnow> {
                 child: PopupMenuButton<menu_items>(
                   icon: Icon(Icons.more_vert, color: Colors.white),
                   onSelected: (menu_items result) { setState(() {
-//                    Router.navigator.pushNamed(Router.signup_5);
-//                    Router.navigator.pushNamed(Router.addBankAccount);
-//                    Router.navigator.pushNamed(Router.editProfile);
+                    Router.navigator.pushNamed(Router.signup_5);
+                    Router.navigator.pushNamed(Router.addBankAccount);
+                    Router.navigator.pushNamed(Router.editProfile);
                   }); },
                   itemBuilder: (BuildContext context) => <PopupMenuEntry<menu_items>>[
                     const PopupMenuItem<menu_items>(
@@ -368,37 +369,40 @@ class _PeopleYouMayKnowState extends State<PeopleYouMayKnow> {
                         )
                       ]))]));
 
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Fyi Fli',
-        theme: ThemeData(fontFamily: 'Gilroy'),
-        home: Scaffold(
-          resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.white,
-          body: Container(
-            child: Stack(children: <Widget>[
-              top_container,
-              Container(
-                child: SingleChildScrollView(
-                  child: Container(
-                      margin: EdgeInsets.only(top: 270),
-                      child: Column(
-                        children: <Widget>[
-                          sub_container,
-                        ],
-                      )),
+    return BaseWidget(builder: (context, sizingInformation)
+    {
+      return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Fyi Fli',
+          theme: ThemeData(fontFamily: 'Gilroy'),
+          home: Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.white,
+            body: Container(
+              child: Stack(children: <Widget>[
+                top_container,
+                Container(
+                  child: SingleChildScrollView(
+                    child: Container(
+                        margin: EdgeInsets.only(top: 270),
+                        child: Column(
+                          children: <Widget>[
+                            sub_container,
+                          ],
+                        )),
+                  ),
                 ),
-              ),
-              Container(
-                height: 80,
-                child: Row(
-                  children: [topPart],
+                Container(
+                  height: 80,
+                  child: Row(
+                    children: [topPart],
+                  ),
+                  decoration: BoxDecoration(color: Color(0xFF00249C)),
                 ),
-                decoration: BoxDecoration(color: Color(0xFF00249C)),
-              ),
-            ]),
-          ),
-        )
-    );
+              ]),
+            ),
+          )
+      );
+    });
   }
 }
